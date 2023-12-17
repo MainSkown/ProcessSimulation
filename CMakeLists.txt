@@ -3,4 +3,9 @@ project(ProcessSimulation)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(ProcessSimulation main.cpp)
+add_executable(ProcessSimulation main.cpp
+        FCFS/FCFSManager.cpp
+        FCFS/FCFSManager.h
+        ProcessGenerator/ProcessStruct.h
+        Config/Config.h
+        Config/Config.cpp)
