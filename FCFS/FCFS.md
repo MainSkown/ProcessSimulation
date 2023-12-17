@@ -10,8 +10,8 @@ title: Algorithm live
 flowchart TB
 create["`Create new **process**`"]
 add["`Add **process** to the end of array`"]
-pick["`Pick first process in array`"]
-process["`Start **process**`"]
+pick["`Pick first **process** in array`"]
+process["`Execute **process**`"]
 remove["`Remove **process** from array`"]
 
 subgraph creation[Process Creation]
@@ -19,7 +19,7 @@ subgraph creation[Process Creation]
 end
     
 subgraph loop[Main Loop]
-    pick --> remove --> process --> pick
+    pick --> remove --> process -->|When finished| pick
 end
 
 creation ..-> loop
