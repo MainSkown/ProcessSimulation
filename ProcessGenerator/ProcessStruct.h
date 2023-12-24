@@ -11,6 +11,10 @@ struct Process {
     unsigned long endOfProcess;
     unsigned int computationTime;
 
+    /**
+     *
+     * @param birthTime when was the process created
+     */
     Process(unsigned long birthTime) : birthTime(birthTime) {
         std::random_device rd;
         std::mt19937 gen(rd());

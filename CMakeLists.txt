@@ -8,4 +8,6 @@ add_executable(ProcessSimulation main.cpp
         FCFS/FCFSManager.h
         ProcessGenerator/ProcessStruct.h
         Config/Config.h
-        Config/Config.cpp)
+        Config/Config.cpp
+        SJF/SJFManager.cpp
+        SJF/SJFManager.h)
