@@ -6,7 +6,7 @@
 
 class SJFManager {
 public:
-    static std::vector<Process> CreateSimulation(unsigned int numProcesses);
+    static std::vector<Process> CreateSimulation(unsigned int numProcesses, std::string name = "");
 };
 
 

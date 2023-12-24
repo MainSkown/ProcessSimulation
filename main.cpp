@@ -1,12 +1,11 @@
 #include <iostream>
-#include "Config/Config.h"
+#include "FCFS/FCFSManager.h"
 
 using namespace std;
 
 int main() {
-    Config::Init();
-
-    cout << Config::getConfig().timeRangeBegin;
+    FCFSManager::CreateSimulation(1000, "Pierwszy proces");
+    FCFSManager::CreateSimulation(1000, "Drugi proces");
 
     return 0;
 }

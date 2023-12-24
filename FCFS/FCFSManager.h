@@ -8,7 +8,7 @@ class FCFSManager {
 public:
     /// @param numProcesses Number of processes to be executed
     /// @return Function returns a vector of executed processes in order of first to last
-    std::vector<Process> CreateSimulation(unsigned int numProcesses);
+    static std::vector<Process> CreateSimulation(unsigned int numProcesses, std::string name = "");
 };
 
 

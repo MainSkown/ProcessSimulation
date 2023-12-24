@@ -1,8 +1,10 @@
 #include "SJFManager.h"
+#include "../ProgressBar/ProgressBar.h"
 #include <random>
 #include <algorithm>
 
-std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses) {
+std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses, std::string name) {
+    auto savedNumProcesses = numProcesses;
     std::vector<Process> executed;
     std::vector<Process> queue;
 
@@ -17,7 +19,7 @@ std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses) {
             // make sure there is at least one process
             queue.emplace_back(ticks);
             numProcesses--;
-        } else {
+        } else if(numProcesses > 0){
             // randomize adding processes
             std::uniform_int_distribution<> dis(1, 100);
             // the bigger ratio of queue size to numProcesses the lower the chance of adding process
@@ -38,6 +40,8 @@ std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses) {
             executed.push_back(queue[0]);
             // delete when finished from queue
             queue.erase(queue.begin());
+
+            ProgressBar::PrintBar(executed.size(), savedNumProcesses, name);
         }
 
         ticks++;
