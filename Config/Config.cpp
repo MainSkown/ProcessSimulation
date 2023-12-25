@@ -23,6 +23,7 @@ Config::Config() {
     if (!config_file.is_open()) {
         this->cfg.timeRangeBegin = DEFAULT_RANGE_BEGIN;
         this->cfg.timeRangeEnd = DEFAULT_RANGE_END;
+        this->cfg.addingChance = DEFAULT_ADDING_CHANCE;
         cout << "No config file detected, using default values\n";
         return;
     }
@@ -52,6 +53,7 @@ Config::Config() {
     try {
         this->cfg.timeRangeBegin = stoi(config_map.at(RANGE_BEGIN_NAME));
         this->cfg.timeRangeEnd = stoi(config_map.at(RANGE_END_NAME));
+        this->cfg.addingChance = stoi(config_map.at(ADDING_NAME));
     } catch (exception &e) {
         throw InvalidConfigNameException();
     }

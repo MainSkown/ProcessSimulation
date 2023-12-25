@@ -25,7 +25,7 @@ std::vector<Process> FCFSManager::CreateSimulation(unsigned int numProcesses, st
             // randomize adding processes
             std::uniform_int_distribution<> dis(1, 100);
             // the bigger ratio of queue size to numProcesses the lower the chance of adding process
-            if(dis(gen) >= queue.size() / numProcesses ){
+            if(dis(gen) <= Config::getConfig().addingChance ){
                 queue.push_back(Process(ticks));
                 numProcesses--;
             }

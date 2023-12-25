@@ -6,10 +6,11 @@
 #define CONFIG_PATH "./config.cfg"
 #define DEFAULT_RANGE_BEGIN 1
 #define DEFAULT_RANGE_END 100
+#define DEFAULT_ADDING_CHANCE 20
 
-#define CONFIG_KEYS ["time_range_begin", "time_range_end"]
 #define RANGE_BEGIN_NAME "time_range_begin"
 #define RANGE_END_NAME "time_range_end"
+#define ADDING_NAME "adding_chance"
 
 class InvalidConfigNameException : public std::exception{};
 
@@ -17,6 +18,7 @@ class InvalidConfigNameException : public std::exception{};
 struct ConfigStruct{
     unsigned int timeRangeBegin;
     unsigned int timeRangeEnd;
+    short addingChance;
 };
 
 class Config {
