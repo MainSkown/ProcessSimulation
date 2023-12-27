@@ -3,6 +3,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <string>
 
 #define BAR_LENGTH 40
 
@@ -21,7 +22,8 @@ public:
             std::cout << point << "/" << end << "\r";
             std::cout.flush();
         } else {
-            std::cout << "completed\n";
+            // A couple tabs to clear the line, it's eye soring but who cares?
+            std::cout << "completed                                    \n";
         }
     }
 };
