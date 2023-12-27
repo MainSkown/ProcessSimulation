@@ -11,4 +11,4 @@ add_executable(ProcessSimulation main.cpp
         Config/Config.cpp
         SJF/SJFManager.cpp
         SJF/SJFManager.h
-        ProgressBar/ProgressBar.h)
+        Utils/ProgressBar.h)

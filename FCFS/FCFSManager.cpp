@@ -1,5 +1,5 @@
 #include "FCFSManager.h"
-#include "../ProgressBar/ProgressBar.h"
+#include "../Utils/ProgressBar.h"
 /**
  *
  * @param numProcesses how many processes should be simulated

@@ -1,5 +1,5 @@
 #include "SJFManager.h"
-#include "../ProgressBar/ProgressBar.h"
+#include "../Utils/ProgressBar.h"
 #include <random>
 #include <algorithm>
 
