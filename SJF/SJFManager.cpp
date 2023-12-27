@@ -21,7 +21,7 @@ std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses, std
             numProcesses--;
         } else if(numProcesses > 0){
             // randomize adding processes
-            std::uniform_int_distribution<> dis(1, 100);
+            std::uniform_int_distribution<> dis(1, Config::getConfig().addingChanceRange);
             // the bigger ratio of queue size to numProcesses the lower the chance of adding process
             if(dis(gen) <= Config::getConfig().addingChance ){
                 queue.push_back(Process(ticks));
