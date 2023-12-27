@@ -11,8 +11,8 @@ class ProcessCreator {
 public:
     static std::vector<std::pair<int, int>> UserCreateSimulations(const std::string& name = ""){
         std::string input;
-        std::cout << "Tworzenie symulacji dla algorytmu: " << name << std::endl;
-        std::cout << "Podaj ilość procesów do symulacji (ilość procesów:ilość symulacji): ";
+        std::cout << "Creating simulation for: " << name << std::endl;
+        std::cout << "Configure simulations (number of processes:number of simulations) (separated by space): ";
         getline(std::cin, input);
 
         std::stringstream sInput(input);

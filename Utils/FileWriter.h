@@ -17,7 +17,7 @@ public:
         }
 
         // Naming columns
-        file << "Czas powstania;Czas rozpoczęcia;Czas obliczeń;Czas zakończenia" << std::endl;
+        file << "Birth time;Starting time;Computation time;Ending time" << std::endl;
 
         // Saving data
         for(auto process : processes){
