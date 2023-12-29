@@ -13,5 +13,7 @@ add_executable(ProcessSimulation main.cpp
         src/SJF/SJFManager.h
         src/Utils/ProgressBar.h
         src/Utils/FileWriter.h
-        src/Utils/ProcessCreator.h)
+        src/Utils/ProcessCreator.h
+        src/FIFO/FIFOManager.cpp
+        src/FIFO/FIFOManager.h
         src/ProcessGenerator/PageStruct.h)
