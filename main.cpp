@@ -1,8 +1,8 @@
 #include <iostream>
-#include "FCFS/FCFSManager.h"
-#include "SJF/SJFManager.h"
-#include "Utils/ProcessCreator.h"
-#include "Utils/FileWriter.h"
+#include "src/FCFS/FCFSManager.h"
+#include "src/SJF/SJFManager.h"
+#include "src/Utils/ProcessCreator.h"
+#include "src/Utils/FileWriter.h"
 
 using namespace std;
 

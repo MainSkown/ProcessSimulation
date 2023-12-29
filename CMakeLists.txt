@@ -4,13 +4,13 @@ project(ProcessSimulation)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(ProcessSimulation main.cpp
-        FCFS/FCFSManager.cpp
-        FCFS/FCFSManager.h
-        ProcessGenerator/ProcessStruct.h
-        Config/Config.h
-        Config/Config.cpp
-        SJF/SJFManager.cpp
-        SJF/SJFManager.h
-        Utils/ProgressBar.h
-        Utils/FileWriter.h
-        Utils/ProcessCreator.h)
+        src/FCFS/FCFSManager.cpp
+        src/FCFS/FCFSManager.h
+        src/ProcessGenerator/ProcessStruct.h
+        src/Config/Config.h
+        src/Config/Config.cpp
+        src/SJF/SJFManager.cpp
+        src/SJF/SJFManager.h
+        src/Utils/ProgressBar.h
+        src/Utils/FileWriter.h
+        src/Utils/ProcessCreator.h)
