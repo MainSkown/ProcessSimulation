@@ -21,10 +21,6 @@ Config::Config() {
 
     // If config file does not exist use default values
     if (!config_file.is_open()) {
-        this->cfg.timeRangeBegin = DEFAULT_RANGE_BEGIN;
-        this->cfg.timeRangeEnd = DEFAULT_RANGE_END;
-        this->cfg.addingChance = DEFAULT_ADDING_CHANCE;
-        this->cfg.addingChanceRange = DEFAULT_ADDING_CHANCE_RANGE;
         cout << "No config file detected, using default values\n";
         return;
     }
@@ -52,10 +48,23 @@ Config::Config() {
     config_file.close();
 
     try {
+        // Process scheduling algorithm
         this->cfg.timeRangeBegin = stoi(config_map.at(RANGE_BEGIN_NAME));
         this->cfg.timeRangeEnd = stoi(config_map.at(RANGE_END_NAME));
         this->cfg.addingChance = stoi(config_map.at(ADDING_NAME));
         this->cfg.addingChanceRange = stoi(config_map.at(ADDING_RANGE_NAME));
+        // Page replacement algorithm
+        this->cfg.frameSize = stoi(config_map.at(FRAME_SIZE_NAME));
+        this->cfg.randomizeString = config_map.at(RANDOMIZE_STRING_NAME) == "true";
+        if(this->cfg.randomizeString){
+            this->cfg.randomizeLength = stoi(config_map.at(RANDOMIZE_LENGTH_NAME));
+            this->cfg.useLetters = useLettersMap.at(config_map.at(USE_LETTERS_NAME));
+            this->cfg.simulationsCount = stoi(config_map.at(SIMULATIONS_COUNT_NAME));
+        } else {
+            // Substring to remove quotes
+            this->cfg.referenceString = config_map.at(REFERENCE_STRING_NAME)
+                    .substr(1, config_map.at(REFERENCE_STRING_NAME).length() - 2);
+        }
     } catch (exception &e) {
         throw InvalidConfigNameException();
     }
@@ -63,28 +72,13 @@ Config::Config() {
     if(this->cfg.timeRangeBegin > this->cfg.timeRangeEnd || this->cfg.addingChance > this->cfg.addingChanceRange){
         throw WrongConfigValueException();
     }
+    if(this->cfg.randomizeString && this->cfg.randomizeLength <= 0){
+        throw WrongConfigValueException();
+    }
+    if(!this->cfg.randomizeString && this->cfg.referenceString.empty()){
+        throw EmptyReferenceStringException();
+    }
 }
-
-//void Config
-//void Config::Init() {
-//    bool working = true;
-//    unsigned int begin,end;
-//    while(working){
-//        cout<<"Compute time range start: ";
-//        cin>>begin;
-//        if(!cin.fail()) working= false;
-//    }
-//
-//    working=true;
-//    while(working){
-//        cout<<"Compute time range end: ";
-//        cin>>end;
-//        if(!cin.fail()) working= false;
-//    }
-//
-//    getClass().cfg.timeRangeBegin = begin;
-//    getClass().cfg.timeRangeEnd = end;
-//}
 
 ConfigStruct Config::getConfig() {
     return getClass().cfg;
