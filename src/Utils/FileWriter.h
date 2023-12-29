@@ -4,10 +4,18 @@
 #include <fstream>
 #include <vector>
 #include "../ProcessGenerator/ProcessStruct.h"
+#include <sys/types.h>
+#include <sys/stat.h>
 
 class FileWriter{
 public:
     static void SaveToFile(const char* path, const std::vector<Process>& processes){
+        // Check if results directory exists if not create it
+        struct stat info{};
+        if(stat("./results", &info) != 0){
+            mkdir("./results", 0777);
+        }
+
         std::ofstream file;
         file.open(path, std::ios::out | std::ios::trunc);
 
