@@ -14,3 +14,4 @@ add_executable(ProcessSimulation main.cpp
         src/Utils/ProgressBar.h
         src/Utils/FileWriter.h
         src/Utils/ProcessCreator.h)
+        src/ProcessGenerator/PageStruct.h)
