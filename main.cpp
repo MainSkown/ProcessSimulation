@@ -47,14 +47,15 @@ int main() {
         LRU.emplace_back(LRUManager::CreateSimulation(Config::getConfig().referenceString, "LRU_ReferenceString"));
     } else {
         for (int i = 1; i <= Config::getConfig().simulationsCount; i++) {
+            std::string reference_string = RandomStringGenerator::GenerateRandomString(Config::getConfig().randomizeLength);
             stringstream ss;
             ss << "FIFO_" << i + 1;
             FIFO.emplace_back(FIFOManager::CreateSimulation(
-                    RandomStringGenerator::GenerateRandomString(Config::getConfig().randomizeLength), ss.str()));
+                    reference_string, ss.str()));
             ss.str("");
             ss << "LRU_" << i + 1;
             LRU.emplace_back(LRUManager::CreateSimulation(
-                    RandomStringGenerator::GenerateRandomString(Config::getConfig().randomizeLength), ss.str()));
+                    reference_string, ss.str()));
 
             ProgressBar::PrintBar(i, Config::getConfig().simulationsCount, "Simulating FIFO and LRU");
         }
