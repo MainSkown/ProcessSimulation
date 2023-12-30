@@ -12,17 +12,20 @@ std::string RandomStringGenerator::GenerateRandomString(unsigned int length) {
     for(int i = 0; i < length; i++) {
         switch (Config::getConfig().useLetters) {
             case CAPITALIZE:
+                // Use capital letters
                 if (gen() % 3 == 0) {
                     result += (char) (gen() % 26 + 65);
                     break;
                 }
+                // Use small letters
             case TRUE:
                 if (gen() % 2 == 0) {
                     result += (char) (gen() % 26 + 97);
                     break;
                 }
             case FALSE:
-                result += (char) (gen() % 26 + 97);
+                // Use numbers
+                result += (char) (gen() % 10 + 48);
                 break;
         }
     }
