@@ -12,6 +12,7 @@ Configurable parameters are located in the `config.cfg` file. The following para
 
 - `process_string`: A string to configure the simulation. Template: < number of processes >:< number of simulations >. 
   Every simulation needs to be seperated by a ';'. Leave the option empty if you want to be asked for the configuration for both algorithms.
+  For example "1000:3;2000:4" will create 7 simulations: 3 for 1000 proceses and 4 for 2000 processes.
 - `time_range_begin`: From what value should the compilation time begin randomizing
 - `time_range_end`: Until what value should the compilation time end randomizing
 - `adding_chance`: Chance of adding a new file to the project
