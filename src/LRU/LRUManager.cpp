@@ -46,7 +46,7 @@ PageAlgorithmResult LRUManager::CreateSimulation(std::string reference_string, c
 
         next:
         ticks++;
-        ProgressBar::PrintBar(ticks, reference_string.size(), name);
+        //ProgressBar::PrintBar(ticks, reference_string.size(), name);
     }
 
     // Add pages that were never replaced

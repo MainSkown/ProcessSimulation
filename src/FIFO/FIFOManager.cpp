@@ -44,7 +44,7 @@ PageAlgorithmResult FIFOManager::CreateSimulation(std::string reference_string, 
 
         next:
             ticks++;
-            ProgressBar::PrintBar(ticks, reference_string.size(), name);
+            //ProgressBar::PrintBar(ticks, reference_string.size(), name);
     }
 
     // Add pages that were never replaced
