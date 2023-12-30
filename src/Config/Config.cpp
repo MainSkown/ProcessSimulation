@@ -51,6 +51,7 @@ Config::Config() {
         // Program config
         this->cfg.floatPrecision = stoi(config_map.at(FLOAT_PRECISION_NAME));
         // Process scheduling algorithm
+        this->cfg.processString = config_map.at(PROCESS_STRING_NAME).substr(1, config_map.at(PROCESS_STRING_NAME).length() - 2);
         this->cfg.timeRangeBegin = stoi(config_map.at(RANGE_BEGIN_NAME));
         this->cfg.timeRangeEnd = stoi(config_map.at(RANGE_END_NAME));
         this->cfg.addingChance = stoi(config_map.at(ADDING_NAME));

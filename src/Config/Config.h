@@ -20,6 +20,7 @@
 // Program config
 #define DEFAULT_FLOAT_PRECISION 3
 
+#define PROCESS_STRING_NAME "process_string"
 #define RANGE_BEGIN_NAME "time_range_begin"
 #define RANGE_END_NAME "time_range_end"
 #define ADDING_NAME "adding_chance"
@@ -48,6 +49,7 @@ const static std::map<std::string, USE_LETTERS> useLettersMap = {
 
 struct ConfigStruct{
     // Process scheduling algorithm
+    std::string processString;
     unsigned int timeRangeBegin = DEFAULT_RANGE_BEGIN;
     unsigned int timeRangeEnd = DEFAULT_RANGE_END;
     short addingChance = DEFAULT_ADDING_CHANCE;
