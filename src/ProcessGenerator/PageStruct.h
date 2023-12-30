@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <iomanip>
+#include "../Config/Config.h"
 
 #define PRECISION 3
 
@@ -44,7 +45,7 @@ struct PageAlgorithmResult{
 
     friend std::ostream& operator<<(std::ostream& o, PageAlgorithmResult& page){
         // Page faults;Page hits;Number of pages;Page hits ratio;Page faults ratio;Average lifetime
-        o << std::fixed << std::setprecision(PRECISION);
+        o << std::fixed << std::setprecision(Config::getConfig().floatPrecision);
         return o << page.pageFaults << ';' << page.pageHits << ';' << page.numberOfPages << ';' << page.pageHitsRatio << ';' << page.pageFaultsRatio << ';' << page.averageLifetime << std::endl;
     }
 };

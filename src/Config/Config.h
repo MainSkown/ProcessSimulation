@@ -17,6 +17,8 @@
 #define DEFAULT_RANDOMIZE_LENGTH 30
 #define DEFAULT_SIMULATIONS_COUNT 3
 #define DEFAULT_USE_LETTERS FALSE
+// Program config
+#define DEFAULT_FLOAT_PRECISION 3
 
 #define RANGE_BEGIN_NAME "time_range_begin"
 #define RANGE_END_NAME "time_range_end"
@@ -28,6 +30,7 @@
 #define RANDOMIZE_LENGTH_NAME "randomize_string_length"
 #define SIMULATIONS_COUNT_NAME "simulations_count"
 #define USE_LETTERS_NAME "use_letters"
+#define FLOAT_PRECISION_NAME "float_precision"
 
 class InvalidConfigNameException : public std::exception{};
 class WrongConfigValueException : public std::exception{};
@@ -56,6 +59,8 @@ struct ConfigStruct{
     int randomizeLength = DEFAULT_RANDOMIZE_LENGTH;
     int simulationsCount = DEFAULT_SIMULATIONS_COUNT;
     USE_LETTERS useLetters = DEFAULT_USE_LETTERS;
+    // Program config
+    int floatPrecision = DEFAULT_FLOAT_PRECISION;
 };
 
 class Config {
