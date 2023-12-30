@@ -57,5 +57,8 @@ int main() {
         }
     }
 
+    FileWriter::SavePageAlgorithmResultsToFile(FILE_PATH_DIRECTORY "FIFO.csv", FIFO);
+    FileWriter::SavePageAlgorithmResultsToFile(FILE_PATH_DIRECTORY "LRU.csv", LRU);
+
     return 0;
 }
