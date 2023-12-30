@@ -8,8 +8,8 @@ std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses, std
     std::vector<Process> executed;
     std::vector<Process> queue;
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
 
     unsigned long ticks = 0;
 

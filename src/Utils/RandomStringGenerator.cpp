@@ -6,8 +6,8 @@ std::string RandomStringGenerator::GenerateRandomString(unsigned int length) {
     std::string result;
     result.reserve(length);
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
 
     for(int i = 0; i < length; i++) {
         switch (Config::getConfig().useLetters) {

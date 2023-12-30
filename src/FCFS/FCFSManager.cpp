@@ -10,8 +10,8 @@ std::vector<Process> FCFSManager::CreateSimulation(unsigned int numProcesses, st
     std::vector<Process> executed;
     std::vector<Process> queue;
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
 
     unsigned long ticks = 0;
 
