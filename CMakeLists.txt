@@ -18,4 +18,6 @@ add_executable(ProcessSimulation main.cpp
         src/FIFO/FIFOManager.h
         src/ProcessGenerator/PageStruct.h
         src/LRU/LRUManager.cpp
-        src/LRU/LRUManager.h)
+        src/LRU/LRUManager.h
+        src/Utils/RandomStringGenerator.cpp
+        src/Utils/RandomStringGenerator.h)
