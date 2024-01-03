@@ -1,12 +1,5 @@
 #include <iostream>
-#include "src/FCFS/FCFSManager.h"
-#include "src/SJF/SJFManager.h"
-#include "src/Utils/ProcessCreator.h"
-#include "src/Utils/FileWriter.h"
-#include "src/FIFO/FIFOManager.h"
-#include "src/LRU/LRUManager.h"
-#include "src/Utils/RandomStringGenerator.h"
-#include "src/Utils/ProgressBar.h"
+#include "src/src.h"
 
 using namespace std;
 
@@ -53,20 +46,18 @@ int main() {
 
         if (!Config::getConfig().randomizeString) {
             FIFO.emplace_back(
-                    FIFOManager::CreateSimulation(Config::getConfig().referenceString, "FIFO_ReferenceString"));
-            LRU.emplace_back(LRUManager::CreateSimulation(Config::getConfig().referenceString, "LRU_ReferenceString"));
+                    FIFOManager::CreateSimulation(Config::getConfig().referenceString));
+            LRU.emplace_back(LRUManager::CreateSimulation(Config::getConfig().referenceString));
         } else {
             for (int i = 1; i <= Config::getConfig().simulationsCount; i++) {
                 std::string reference_string = RandomStringGenerator::GenerateRandomString(
                         Config::getConfig().randomizeLength);
-                stringstream ss;
-                ss << "FIFO_" << i + 1;
+
                 FIFO.emplace_back(FIFOManager::CreateSimulation(
-                        reference_string, ss.str()));
-                ss.str("");
-                ss << "LRU_" << i + 1;
+                        reference_string));
+
                 LRU.emplace_back(LRUManager::CreateSimulation(
-                        reference_string, ss.str()));
+                        reference_string ));
 
                 ProgressBar::PrintBar(i, Config::getConfig().simulationsCount, "Simulating FIFO and LRU");
             }

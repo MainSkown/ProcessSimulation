@@ -20,4 +20,5 @@ add_executable(ProcessSimulation main.cpp
         src/LRU/LRUManager.cpp
         src/LRU/LRUManager.h
         src/Utils/RandomStringGenerator.cpp
-        src/Utils/RandomStringGenerator.h)
+        src/Utils/RandomStringGenerator.h
+        src/src.h)
