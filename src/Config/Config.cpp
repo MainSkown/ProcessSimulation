@@ -50,6 +50,8 @@ Config::Config() {
     try {
         // Program config
         this->cfg.floatPrecision = stoi(config_map.at(FLOAT_PRECISION_NAME));
+        this->cfg.skipProcesses = config_map.at(SKIP_PROCESS_NAME) == "true";
+        this->cfg.skipPageReplacement = config_map.at(SKIP_PAGE_REPLACEMENT_NAME) == "true";
         // Process scheduling algorithm
         this->cfg.processString = config_map.at(PROCESS_STRING_NAME).substr(1, config_map.at(PROCESS_STRING_NAME).length() - 2);
         this->cfg.timeRangeBegin = stoi(config_map.at(RANGE_BEGIN_NAME));

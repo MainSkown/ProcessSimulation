@@ -32,6 +32,8 @@
 #define SIMULATIONS_COUNT_NAME "simulations_count"
 #define USE_LETTERS_NAME "use_letters"
 #define FLOAT_PRECISION_NAME "float_precision"
+#define SKIP_PROCESS_NAME "skip_processes"
+#define SKIP_PAGE_REPLACEMENT_NAME "skip_page_replacement"
 
 class InvalidConfigNameException : public std::exception{};
 class WrongConfigValueException : public std::exception{};
@@ -63,6 +65,8 @@ struct ConfigStruct{
     USE_LETTERS useLetters = DEFAULT_USE_LETTERS;
     // Program config
     int floatPrecision = DEFAULT_FLOAT_PRECISION;
+    bool skipProcesses = false;
+    bool skipPageReplacement = false;
 };
 
 class Config {
