@@ -9,6 +9,12 @@
 
 class ProgressBar{
 public:
+    /**
+     * @brief Function for printing a progress bar
+     * @param point Where the progress bar is currently
+     * @param end Where the progress bar should end
+     * @param message Message to be printed before the progress bar
+     */
     static void PrintBar(unsigned int point, unsigned int end, const std::string& message = ""){
         double progress = (double)point/(double)end;
         int progressChars = std::floor(BAR_LENGTH * progress);

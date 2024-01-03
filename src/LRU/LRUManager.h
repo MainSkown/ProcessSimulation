@@ -6,7 +6,12 @@
 
 class LRUManager {
 public:
-    static PageAlgorithmResult CreateSimulation(std::string reference_string, const std::string& name = "");
+    /**
+     * @brief Function for creating simulation of LRU algorithm
+     * @param reference_string Reference string for simulation -> preferably a random string
+     * @return Return PageAlgorithmResult struct with results of the simulation
+     */
+    static PageAlgorithmResult CreateSimulation(std::string reference_string);
 };
 
 

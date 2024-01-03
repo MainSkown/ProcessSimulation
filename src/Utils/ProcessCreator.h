@@ -12,7 +12,12 @@ class WrongInputException : public std::exception {};
 
 class ProcessCreator {
 public:
-    static std::vector<std::pair<int, int>> UserCreateSimulations(const std::string& name = ""){
+    /**
+     * @brief Function for creating simulations from user input
+     * @param name Name of the algorithm
+     * @return Returning a vector of pairs of number of processes and number of simulations
+     */
+    static std::vector<std::pair<int, int>> UserCreateSimulations(const std::string& name){
         std::string input;
         if(Config::getConfig().processString.empty()) {
             std::cout << "Creating simulation for: " << name << std::endl;

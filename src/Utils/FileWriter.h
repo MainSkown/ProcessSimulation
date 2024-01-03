@@ -10,6 +10,11 @@
 
 class FileWriter{
 public:
+    /**
+     * @brief Function for saving processes to file
+     * @param path Path to file
+     * @param processes Vector of processes
+     */
     static void SaveProcessesToFile(const char* path, const std::vector<Process>& processes){
         // Check if results directory exists if not create it
         struct stat info{};
@@ -35,6 +40,12 @@ public:
 
         file.close();
     }
+
+    /**
+     * @brief Function for saving page algorithm results to file
+     * @param path Path to file
+     * @param results Vector of page algorithm results
+     */
     static void SavePageAlgorithmResultsToFile(const char* path, const std::vector<PageAlgorithmResult> results){
         // Check if results directory exists if not create it
         struct stat info{};

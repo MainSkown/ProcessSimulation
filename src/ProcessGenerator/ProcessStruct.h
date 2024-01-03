@@ -12,7 +12,7 @@ struct Process {
     unsigned int computationTime;
 
     /**
-     *
+     * @brief Constructor for Process struct
      * @param birthTime when was the process created
      */
     Process(unsigned long birthTime) : birthTime(birthTime) {

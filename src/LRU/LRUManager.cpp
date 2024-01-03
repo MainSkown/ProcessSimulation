@@ -4,7 +4,7 @@
 #include "../Utils/ProgressBar.h"
 
 
-PageAlgorithmResult LRUManager::CreateSimulation(std::string reference_string, const std::string &name) {
+PageAlgorithmResult LRUManager::CreateSimulation(std::string reference_string) {
     unsigned int page_faults = 0;
     unsigned int page_hits = 0;
 
