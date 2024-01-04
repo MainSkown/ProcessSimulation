@@ -26,9 +26,10 @@ std::vector<Process> SJFManager::CreateSimulation(unsigned int numProcesses, std
             if(dis(gen) <= Config::getConfig().addingChance ){
                 queue.push_back(Process(ticks));
                 numProcesses--;
+
+                // Sort every process in queue but first one
+                std::sort(queue.begin() + 1, queue.end(), [](Process x, Process y){return x.computationTime < y.computationTime;});
             }
-            // Sort every process in queue but first one
-            std::sort(queue.begin() + 1, queue.end(), [](Process x, Process y){return x.computationTime < y.computationTime;});
         }
 
         if(queue[0].startedTime == -1){
