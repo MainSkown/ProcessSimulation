@@ -49,12 +49,5 @@ PageAlgorithmResult LRUManager::CreateSimulation(std::string reference_string) {
         //ProgressBar::PrintBar(ticks, reference_string.size(), name);
     }
 
-    // Add pages that were never replaced
-    for(auto &p : frame){
-        if(p != nullptr){
-            pages.push_back(*p);
-        }
-    }
-
     return PageAlgorithmResult{page_faults, page_hits, pages};
 }
