@@ -26,7 +26,7 @@ There are 2 algorithms to be simulated:
 
 ```mermaid
 ---
-title: FCFS algorithm live
+title: FCFS algorithm life
 ---
 flowchart TB
     create["`Create new **process**`"]
@@ -50,7 +50,7 @@ flowchart TB
 
 ```mermaid
 ---
-title: SJF algorithm live
+title: SJF algorithm life
 ---
 flowchart TB
     create["`Create new **process**`"]
@@ -114,7 +114,7 @@ There are 2 algorithms to be simulated:
 
 ```mermaid
 ---
-title: FIFO algorithm live
+title: FIFO algorithm life
 ---
 flowchart TB
     read["`Read **page** from reference string`"]
@@ -130,7 +130,7 @@ flowchart TB
 
 ```mermaid
 ---
-title: LRU algorithm live
+title: LRU algorithm life
 ---
 flowchart TB
     read["`Read **page** from reference string`"]
